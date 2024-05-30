@@ -8,6 +8,7 @@ scalaVersion := "2.13.14"
 
 libraryDependencies += guice
 libraryDependencies += "org.scalatestplus.play" %% "scalatestplus-play" % "7.0.0" % Test
+libraryDependencies += "com.typesafe.play" %% "play-json" % "2.9.2"
 
 libraryDependencies ++= Seq(
   "org.playframework" %% "play-slick"            % "6.1.0",
@@ -15,8 +16,7 @@ libraryDependencies ++= Seq(
   "mysql" % "mysql-connector-java" % "8.0.33"
 )
 
-//kafka
-
+resolvers += "Akka library repository".at("https://repo.akka.io/maven")
 lazy val akkaVersion = sys.props.getOrElse("akka.version", "2.9.3")
 fork := true
 
